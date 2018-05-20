@@ -1,0 +1,6 @@
+[package]
+name = "desktop_entry"
+version = "0.1.0"
+authors = ["Eyal Kalderon <ebkalderon@gmail.com>"]
+
+[dependencies]
