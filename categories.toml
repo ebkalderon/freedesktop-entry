@@ -1,0 +1,18 @@
+[categories]
+Audio = []
+AudioVideo = []
+Development = [
+    "Building",
+    "Debugger",
+    "IDE"
+]
+Education = []
+Game = []
+Graphics = []
+Network = []
+Office = []
+Science = []
+Settings = []
+System = []
+Utility = []
+Video = []
