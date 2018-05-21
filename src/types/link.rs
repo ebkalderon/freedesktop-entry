@@ -1,5 +1,7 @@
 //! Represents the `link` entry type.
 
+use url::Url;
+
 use super::Type;
 use version;
 
@@ -25,10 +27,18 @@ impl Type<version::V120> for Link {
 }
 
 #[derive(Clone, Debug, Default)]
-pub struct LinkV100;
+pub struct LinkV100 {
+    pub url: Option<Url>,
+}
 
 #[derive(Clone, Debug, Default)]
-pub struct LinkV110;
+pub struct LinkV110 {
+    /// FIXME: Cannot be optional.
+    pub url: Option<Url>,
+}
 
 #[derive(Clone, Debug, Default)]
-pub struct LinkV120;
+pub struct LinkV120 {
+    /// FIXME: Cannot be optional.
+    pub url: Option<Url>,
+}

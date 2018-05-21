@@ -1,4 +1,8 @@
+use std::collections::HashMap;
 use std::str::FromStr;
+
+#[derive(Clone, Debug)]
+pub struct Categories(HashMap<String, Category>);
 
 #[derive(Clone, Debug, Eq, Hash, PartialEq)]
 pub struct Category(String);

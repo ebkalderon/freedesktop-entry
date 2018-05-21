@@ -1,6 +1,6 @@
 //! Valid types of desktop entry files.
 
-pub use self::desktop::Desktop;
+pub use self::app::Application;
 pub use self::directory::Directory;
 pub use self::link::Link;
 
@@ -8,7 +8,7 @@ use std::fmt::Debug;
 
 use version::Version;
 
-mod desktop;
+mod app;
 mod directory;
 mod link;
 

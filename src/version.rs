@@ -1,6 +1,21 @@
 //! Supported versions of the Desktop Entry specification.
 
 use std::fmt::Debug;
+use std::path::PathBuf;
+
+/// TODO: Find another place to put this.
+#[derive(Clone, Debug)]
+pub enum ShowIn {
+    Only(Vec<String>),
+    Not(Vec<String>),
+}
+
+/// TODO: Find another place to put this.
+#[derive(Clone, Debug)]
+pub enum Icon {
+    Path(PathBuf),
+    Name(String),
+}
 
 pub trait Version {
     const STRING: &'static str;
@@ -19,9 +34,13 @@ impl Version for V100 {
 
 #[derive(Clone, Debug, Default)]
 pub struct FieldsV100 {
-    name: String,
-    generic_name: Option<String>,
-    no_display: Option<bool>,
+    pub name: String,
+    pub generic_name: Option<String>,
+    pub no_display: Option<bool>,
+    pub comment: Option<String>,
+    pub hidden: Option<bool>,
+    pub icon: Option<Icon>,
+    pub show_in: Option<ShowIn>,
 }
 
 #[derive(Clone, Debug)]
@@ -35,9 +54,14 @@ impl Version for V110 {
 
 #[derive(Clone, Debug, Default)]
 pub struct FieldsV110 {
-    name: String,
-    generic_name: Option<String>,
-    no_display: Option<bool>,
+    pub name: String,
+    pub generic_name: Option<String>,
+    pub no_display: Option<bool>,
+    pub comment: Option<String>,
+    pub hidden: Option<bool>,
+    pub icon: Option<Icon>,
+    pub show_in: Option<ShowIn>,
+    pub dbus_activatable: Option<bool>,
 }
 
 #[derive(Clone, Debug)]
@@ -51,7 +75,12 @@ impl Version for V120 {
 
 #[derive(Clone, Debug, Default)]
 pub struct FieldsV120 {
-    name: String,
-    generic_name: Option<String>,
-    no_display: Option<bool>,
+    pub name: String,
+    pub generic_name: Option<String>,
+    pub no_display: Option<bool>,
+    pub comment: Option<String>,
+    pub hidden: Option<bool>,
+    pub icon: Option<Icon>,
+    pub show_in: Option<ShowIn>,
+    pub dbus_activatable: Option<bool>,
 }
